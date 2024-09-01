@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Ticket Bot Customization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Customize Your Ticket Bot</h1>
+        <!-- Login button for Discord authentication -->
+        <button id="login-btn">Log in with Discord</button>
+
+        <!-- Settings form, initially hidden -->
+        <div id="settings" style="display: none;">
+            <h2>Bot Settings</h2>
+
+            <!-- Dropdown for selecting a channel -->
+            <label for="channel-select">Select Channel:</label>
+            <select id="channel-select">
+                <!-- Channels will be dynamically populated -->
+            </select>
+
+            <!-- Text area for entering a custom message -->
+            <label for="message-content">Custom Ticket Message:</label>
+            <textarea id="message-content" placeholder="Enter your custom message here"></textarea>
+
+            <!-- Button to save settings -->
+            <button id="save-btn">Save Settings</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
