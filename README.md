@@ -1,1 +1,0 @@
-ticketsgg bot for discord
