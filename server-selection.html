@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Server</h1>
+        <form action="/server-selection" method="POST">
+            <label for="guildId">Choose your server:</label>
+            <select id="guildId" name="guildId">
+                <!-- Server options will be dynamically inserted here -->
+                <% guilds.forEach(guild => { %>
+                    <option value="<%= guild.id %>"><%= guild.name %></option>
+                <% }) %>
+            </select>
+            <button type="submit" class="save-btn">Select Server</button>
+        </form>
+    </div>
+</body>
+</html>

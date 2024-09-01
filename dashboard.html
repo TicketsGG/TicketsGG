@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Server Dashboard</h1>
+        <form action="/save-settings" method="POST">
+            <input type="hidden" name="guildId" value="<%= guildId %>">
+            <label for="ticketCreationChannel">Ticket Creation Message Channel:</label>
+            <select id="ticketCreationChannel" name="ticketCreationChannel">
+                <!-- Channel options will be dynamically inserted here -->
+                <% channels.forEach(channel => { %>
+                    <option value="<%= channel.id %>"><%= channel.name %></option>
+                <% }) %>
+            </select>
+
+            <label for="ticketCreationMessage">Ticket Creation Message:</label>
+            <textarea id="ticketCreationMessage" name="ticketCreationMessage" rows="4" required></textarea>
+
+            <label for="ticketCreationMessageEmbed">Ticket Creation Message Embed:</label>
+            <input type="checkbox" id="ticketCreationMessageEmbed" name="ticketCreationMessageEmbed">
+
+            <label for="ticketCategory">Ticket Category:</label>
+            <select id="ticketCategory" name="ticketCategory">
+                <!-- Category options will be dynamically inserted here -->
+                <% channels.forEach(channel => { %>
+                    <option value="<%= channel.id %>"><%= channel.name %></option>
+                <% }) %>
+            </select>
+
+            <label for="ticketStaffRole">Ticket Staff Role:</label>
+            <select id="ticketStaffRole" name="ticketStaffRole">
+                <!-- Role options will be dynamically inserted here -->
+                <% roles.forEach(role => { %>
+                    <option value="<%= role.id %>"><%= role.name %></option>
+                <% }) %>
+            </select>
+
+            <label for="initialTicketCreationMessage">Initial Ticket Creation Message:</label>
+            <textarea id="initialTicketCreationMessage" name="initialTicketCreationMessage" rows="4" required></textarea>
+
+            <label for="maxTicketsPerUser">Max Tickets Per User:</label>
+            <input type="number" id="maxTicketsPerUser" name="maxTicketsPerUser" required>
+
+            <button type="submit" class="save-btn">Save</button>
+        </form>
+        <form action="/resend-ticket-message" method="POST">
+            <input type="hidden" name="guildId" value="<%= guildId %>">
+            <button type="submit" class="resend-btn">Resend Ticket Message</button>
+        </form>
+    </div>
+</body>
+</html>
