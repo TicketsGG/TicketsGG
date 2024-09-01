@@ -4,11 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to the Dashboard</h1>
-    <a href="http://localhost:3000/auth/discord">Login with Discord</a>
-    <div id="dashboard"></div>
+    <h1 id="serverName">Server Dashboard</h1>
+    <label for="creationChannel">Ticket Creation Message Channel:</label>
+    <select id="creationChannel">
+        <!-- Add your options dynamically -->
+    </select>
+
+    <label for="creationMessage">Ticket Creation Message:</label>
+    <textarea id="creationMessage"></textarea>
+
+    <label for="creationMessageEmbed">Ticket Creation Message Embed:</label>
+    <input type="checkbox" id="creationMessageEmbed">
+
+    <label for="ticketCategory">Ticket Category:</label>
+    <select id="ticketCategory">
+        <!-- Add your options dynamically -->
+    </select>
+
+    <label for="ticketStaffRole">Ticket Staff Role:</label>
+    <select id="ticketStaffRole">
+        <!-- Add your options dynamically -->
+    </select>
+
+    <label for="initialTicketMessage">Initial Ticket Creation Message:</label>
+    <textarea id="initialTicketMessage"></textarea>
+
+    <label for="maxTicketsPerUser">Max Tickets Per User:</label>
+    <input type="number" id="maxTicketsPerUser">
+
+    <!-- Existing code for save button -->
+    <button id="saveSettings">Save</button>
+
+    <!-- New button for resending the ticket creation message -->
+    <button id="resendTicketMessage">Resend Ticket Message</button>
 
     <script src="dashboard.js"></script>
 </body>
